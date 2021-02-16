@@ -1,0 +1,30 @@
+###Guess the number
+#You ask a user to guess a number between 1 and 50
+#If they guess outside that range, you prompt with an error encouraging them to choose a number within the proper range
+#Whenever they guess the wrong number you ask if they want to keep playing or if they'd like to quit
+#Finally, when the user eventually guesses the right number you congratulate them and show the number of attempts they had
+
+from random import randint
+
+answer = "y"
+rnd = randint(1, 50)
+no_goes = 0
+while answer == "y":
+    print("Think of a number between 1 and 50")
+    number = int(input("What number are you thinking? "))
+    no_goes = no_goes + 1
+    if not 1 <= number <= 50:
+        print("That number was not in range, please pick another")
+        answer == ""
+    else:
+        if rnd != number:
+            print("That's incorrect! Have another go?")
+            answer = input("Yes or No? ")[0].lower()
+        else:
+            print("That's correct")
+            if no_goes == 1:
+                print("You have had " + str(no_goes) + " try!")
+                answer = "n"
+            else:
+                print("You have had " + str(no_goes) + " trys!")
+                answer = "n"
