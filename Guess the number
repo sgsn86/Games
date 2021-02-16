@@ -15,7 +15,7 @@ while answer == "y":
     no_goes = no_goes + 1
     if not 1 <= number <= 50:
         print("That number was not in range, please pick another")
-        answer == ""
+        answer == "y"
     else:
         if rnd != number:
             print("That's incorrect! Have another go?")
