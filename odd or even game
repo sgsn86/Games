@@ -1,0 +1,20 @@
+###odd or even game
+#Welcome a user then ask them for a number between 1 and 1000
+#When the user gives you the number, you check if it's odd or even and then you print a message letting them know
+
+answer = "y"
+while answer == "y":
+    print("Think of a number between 1 and 1000")
+    number = int(input("What number are you thinking?"))
+    if not 1 <= number <= 1000:
+        print("That number was not in range, please pick another")
+        answer == "y"
+    else:
+        output = number / 2
+        output_rounded = round(output,0)
+        if output_rounded == output:
+            print("That's an even number! Have another go?")
+            answer = input("Yes or No?")[0].lower()
+        else:
+            print("That's an odd number! Have another go?")
+            answer = input("Yes or No?")[0].lower()
