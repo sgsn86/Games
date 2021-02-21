@@ -3,20 +3,20 @@ on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Person to greet'
+        description: "Person to greet"
         required: true
-        default: 'Mona the Octocat'
+        default: "Mona the Octocat"
       count:
-        description: 'Number of times to repeat'
+        description: "Number of times to repeat"
         required: false
-        default: '1'
+        default: "1"
 
 jobs:
   execute:
     name: execute
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - run: docker build -t myproject .
-    - run: docker run -t myproject --name ${{ inputs.name }} --count ${{ inputs.count }}
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - run: docker build -t myproject .
+      - run: docker run -t myproject --name ${{ inputs.name }} --count ${{ inputs.count }}
